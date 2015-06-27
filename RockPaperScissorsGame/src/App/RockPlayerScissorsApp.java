@@ -2,7 +2,7 @@ package App;
 
 import java.util.Scanner;
 import model.*;
-import model.*;
+
 
 public class RockPlayerScissorsApp {
 
