@@ -2,6 +2,7 @@ package App;
 
 import java.util.Scanner;
 import model.*;
+import model.*;
 
 public class RockPlayerScissorsApp {
 
@@ -14,14 +15,11 @@ public class RockPlayerScissorsApp {
 		System.out.println("Enter your name: ");
 		name = sc.next();
 		User userOne = new User(name);
-		Player userTwo;
-
-		System.out
-				.println("Would you like to play against The Jets or TheSharks (j/s)");
-		String playerType = validChoice(sc,"j","s");
-		userTwo = castPlayer(playerType);
+		Player userTwo;		
+		String playerType = Validator.getChoice(sc,"Would you like to play against The Jets or TheSharks (j/s)","j","s");
+		userTwo = castPlayer(playerType);		
 		rockPaperScissors(sc, userOne, userTwo);
-		sc.close();
+		sc.close();		
 
 	}
 
@@ -72,7 +70,8 @@ public class RockPlayerScissorsApp {
 			System.out.println(userTwo.name + " wins");
 		}
 	}
-
+	
+//Method not used
 	public static String validChoice(Scanner sc, String one, String two) {
 		String choice = "";
 		while (true) {
